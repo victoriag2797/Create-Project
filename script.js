@@ -10,12 +10,36 @@ const optb = document.getElementById('optb');
 const optc = document.getElementById('optc');
 const optd = document.getElementById('optd');
 
+let scoreContainer = document.querySelector('.score-container')
 let score = 0;
+let number = 1
 let questionIndex = 0;
 let optaIndex = 0;
 let optbIndex = 0;
 let optcIndex = 0;
 let optdIndex = 0;
+
+
+```
+button.addEventListener("click", optFunct); 
+
+function optFunct () {
+    questionIndex += 1;
+    question.textContent = questionList[questionIndex];
+    score += 1;
+    optaIndex += 1;
+    optbIndex += 1;
+    optcIndex += 1;
+    optdIndex += 1;
+    opta.textContent = optaList[optaIndex];
+    optb.textContent = optbList[optbIndex];
+    optc.textContent = optcList[optcIndex];
+    optd.textContent = optdList[optdIndex];
+    number +=1;
+    scoreContainer.textContent = "Score: " + score;
+}
+
+```
 
 opta.addEventListener("click", optaFunct); 
 
@@ -25,8 +49,13 @@ function optaFunct () {
     score += 1;
     optaIndex += 1;
     opta.textContent = optaList[optaIndex];
+    optb.textContent = optbList[optbIndex];
+    optc.textContent = optcList[optcIndex];
+    optd.textContent = optdList[optdIndex];
+    number +=1;
+    scoreContainer.textContent = "Score: " + score;
 }
-
+    
 optb.addEventListener("click", optbFunct); 
 
 function optbFunct () {
@@ -34,7 +63,12 @@ function optbFunct () {
     question.textContent = questionList[questionIndex];
     score += 2;
     optbIndex += 1;
-    optb.textContent = optbList[optaIndex];
+    opta.textContent = optaList[optaIndex];
+    optb.textContent = optbList[optbIndex];
+    optc.textContent = optcList[optcIndex];
+    optd.textContent = optdList[optdIndex];
+    number +=1;
+    scoreContainer.textContent = "Score: " + score;
 }
 
 optc.addEventListener("click", optcFunct); 
@@ -44,7 +78,12 @@ function optcFunct () {
     question.textContent = questionList[questionIndex];
     score += 3;
     optcIndex += 1;
+    opta.textContent = optaList[optaIndex];
+    optb.textContent = optbList[optbIndex];
     optc.textContent = optcList[optcIndex];
+    optd.textContent = optdList[optdIndex];
+    number +=1;
+    scoreContainer.textContent = "Score: " + score;
 }
 
 optd.addEventListener("click", optdFunct); 
@@ -54,12 +93,17 @@ function optdFunct () {
     question.textContent = questionList[questionIndex];
     score += 4;
     optdIndex += 1;
+    opta.textContent = optaList[optaIndex];
+    optb.textContent = optbList[optbIndex];
+    optc.textContent = optcList[optcIndex];
     optd.textContent = optdList[optdIndex];
+    number +=1;
+    scoreContainer.textContent = "Score: " + score;
 }
 
 if (score = 20) {
     console.log ("I fear you are literally me, exactly. Like we picked the exact same answers.");
-  } if (condition2) {
+  } if (score > 20) {
     greeting = "Good evening";
   } else {
     greeting = "Good evening";
